@@ -1,4 +1,4 @@
-// This file contains definitions for the 
+// This file contains definitions for the
 // MIPS register related constants.
 
 // Coprocessor 0 register names
@@ -17,7 +17,7 @@
 #define STATUS_EXL  0x00000002
 #define STATUS_ERL  0x00000004
 #define STATUS_KSU  0x00000018
-#define STATUS_IM   0x0000ff00
+#define STATUS_IM   0x00007f00
 #define STATUS_BEV  0x00400000
 #define STATUS_CU0  0x10000000
 

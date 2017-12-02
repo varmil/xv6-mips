@@ -2,7 +2,7 @@
 #include "regs.h"
 
 # Enbale MIPS dependent GAS macros.
-.set macro  
+.set macro
 .align 2
 
 # By convention, the _start symbol specifies the ELF entry point.
@@ -19,7 +19,7 @@ _start:
   lui    $t1, STATUS_CU0 >> 16
   or     $t0, $t0, $t1
   mtc0   $t0, $COP0_STATUS
-  
+
   # Set up the stack pointer.
   la  $sp, stack + KSTACKSIZE
 
