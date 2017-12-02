@@ -57,11 +57,6 @@ void            ideinit(void);
 void            ideintr(void);
 void            iderw(struct buf*);
 
-// ioapic.c
-void            ioapicenable(int irq, int cpu);
-extern uchar    ioapicid;
-void            ioapicinit(void);
-
 // kalloc.c
 char*           kalloc(void);
 void            kfree(char*);
@@ -70,15 +65,6 @@ void            kinit2(void*, void*);
 
 // kbd.c
 void            kbdintr(void);
-
-// lapic.c
-void            cmostime(struct rtcdate *r);
-int             cpunum(void);
-extern volatile uint*    lapic;
-void            lapiceoi(void);
-void            lapicinit(void);
-void            lapicstartap(uchar, uint);
-void            microdelay(int);
 
 // log.c
 void            initlog(void);

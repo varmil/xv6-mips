@@ -14,13 +14,11 @@ struct cpu cpus[NCPU];
 struct cpu *cpu = &cpus[0];  // &cpus[cpunum()]
 int ismp;
 int ncpu;
-uchar ioapicid;
 
 void
 mpinit(void)
 {
   ncpu = 1;
   cpus[ncpu].id = ncpu;
-  ioapicid = 0;
   ismp = 0;
 }

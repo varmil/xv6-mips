@@ -44,9 +44,8 @@ main(void)
 static void
 mpenter(void)
 {
-  switchkvm(); 
+  switchkvm();
   seginit();
-  lapicinit();
   mpmain();
 }
 */
@@ -58,4 +57,3 @@ mpmain(void)
   atomic_swap(&cpu->started, 1); // tell startothers() we're up
   scheduler();     // start running processes
 }
-
