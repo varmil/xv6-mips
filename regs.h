@@ -17,7 +17,7 @@
 #define STATUS_EXL  0x00000002
 #define STATUS_ERL  0x00000004
 #define STATUS_KSU  0x00000018
-#define STATUS_IM   0x00007f00
+#define STATUS_IM   0x00007f00 // disable IM(7) which is internal timer with CP0, because we use PIT(8253)
 #define STATUS_BEV  0x00400000
 #define STATUS_CU0  0x10000000
 
