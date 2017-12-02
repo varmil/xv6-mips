@@ -1,0 +1,7 @@
+version: "2"
+services:
+  app:
+    image: amclain/crosstool-ng
+    volumes:
+      - .:/root/xv6-mips
+    tty: true

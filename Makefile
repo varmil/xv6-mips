@@ -31,7 +31,7 @@ OBJS = \
 TOOLPREFIX = mipsel-sde-elf-
 
 # Using native tools (e.g., on X86 Linux)
-#TOOLPREFIX = 
+#TOOLPREFIX =
 
 # Try to infer the correct TOOLPREFIX if not set
 ifndef TOOLPREFIX
@@ -187,7 +187,7 @@ fs.img: mkfs README $(UPROGS)
 
 -include *.d
 
-clean: 
+clean:
 	rm -f *.tex *.dvi *.idx *.aux *.log *.ind *.ilg \
 	*.o *.d *.asm *.sym vectors.S bootblock \
 	initcode initcode.out kernel xv6.img fs.img kernelmemfs mkfs \
@@ -206,7 +206,7 @@ CPUS := 1
 endif
 # QEMUOPTS = -hdb fs.img -kernel kernel -smp $(CPUS) -m 512 $(QEMUEXTRA)
 QEMUOPTS = -hdb fs.img -kernel kernel -smp 1 -m 256 -M mips
-QEMUOPTSMEMFS = -kernel kernelmemfs -smp 1 -m 256 -M mips
+QEMUOPTSMEMFS = -kernel kernelmemfs -cpu 4Kc -smp 1 -m 256 -M mips -nographic -monitor telnet::1234,server,nowait
 
 qemu: fs.img kernel
 	@echo -e "\033[0;31m'make qemu' is not implemented at current. Run 'make qemu-memfs'!\033[0m"
@@ -237,4 +237,3 @@ qemu-memfs-gdb: kernelmemfs .gdbinit
 qemu-nox-gdb: fs.img xv6.img .gdbinit
 	@echo "*** Now run 'gdb'." 1>&2
 	$(QEMU) -nographic $(QEMUOPTS) -S $(QEMUGDB)
-
