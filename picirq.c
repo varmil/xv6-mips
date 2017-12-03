@@ -115,7 +115,7 @@ picsendeoi(int irq)
     return;
 
   if(irq <= 7){
-    outb(IO_PIC1, 0x60 + irq);
+    outb(IO_PIC1, 0x60 + irq); // OCW2
   } else {
     if(irq != IRQ_SPURIOUS_SL)
       outb(IO_PIC2, 0x60 + irq - 8);
