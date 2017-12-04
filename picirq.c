@@ -81,10 +81,10 @@ picinit(void)
   //    p:  0 = no polling, 1 = polling mode
   //   rs:  0x = NOP, 10 = read IRR, 11 = read ISR
   outb(IO_PIC1, 0x68);             // clear specific mask
-  outb(IO_PIC1, 0x0a);             // read IRR by default
+  outb(IO_PIC1, 0x0b);             // read ISR by default
 
   outb(IO_PIC2, 0x68);             // OCW3
-  outb(IO_PIC2, 0x0a);             // OCW3
+  outb(IO_PIC2, 0x0b);             // OCW3
 
   if(irqmask != 0xFFFF)
     picsetmask(irqmask);
